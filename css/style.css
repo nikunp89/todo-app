@@ -1,0 +1,193 @@
+#todo-list li {
+    list-style: none;
+}
+header {
+    margin-bottom:15px;
+}
+.app {
+    width:600px;
+    padding:15px;
+}
+#todo-form {
+    padding:10px 0;
+}
+.destroy {
+    background: #d51900;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 1.5px 5px;;
+    border:1px solid #d51900;
+    margin-left:15px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.todo-filter {
+    list-style: none;
+    padding:15px;
+}
+.todo-filter li a {
+    display: block;
+    padding:5px;
+    position: relative;
+}
+.todo-filter>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background:#d51900;
+}
+#main {
+    padding:10px;
+}
+#todo-list li {
+    padding:5px 0;
+    margin-top:15px;
+    border-bottom:1px solid #cfcfcf;
+}
+.destroy:hover {
+    background-color: #ffffff;
+    border: 1px solid #d51900;
+    color: #d51900;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+}
+
+.control--radio .control__indicator {
+    border-radius: 50%;
+}
+
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+    background: #ccc;
+}
+
+.control input:checked ~ .control__indicator {
+    background: #b71500;
+}
+
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+    background: #d51900;
+}
+
+.control input:disabled ~ .control__indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.control__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.control input:checked ~ .control__indicator:after {
+    display: block;
+}
+
+.control--checkbox .control__indicator:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+}
+
+#new-todo {
+    border: 1px solid #CFCFCF;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    padding: 5px;
+    outline: none;
+}
+
+#new-todo:hover {
+    border: 1px solid #d51900;
+}
+
+#new-todo:focus {
+    background: #fff;
+    border: 1px solid #d51900;
+    -webkit-box-shadow: 0px 0px 3px #d51900 inset;
+    -moz-box-shadow: 0px 0px 3px #d51900 inset;
+    -o-box-shadow: 0px 0px 3px #d51900 inset;
+    box-shadow: 0px 0px 3px #d51900 inset;
+    outline: none;
+}
+
+.button {
+    background-color: #d51900;
+    border: 1px solid #d51900;
+    color: #ffffff;
+    padding: 5px 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    outline: none;
+}
+
+.button:hover {
+    background-color: #ffffff;
+    border: 1px solid #d51900;
+    color: #d51900;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: #d51900;
+    border-color: #d51900;
+    cursor: default;
+}
