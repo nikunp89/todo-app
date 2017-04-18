@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>MyTodoList</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5
+	/angular.min.js"></script>
+    <link data-require="bootstrap-css@3.x" data-semver="3.1.1" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <script data-require="ui-bootstrap@*" data-semver="0.10.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <link rel="stylesheet" href="css/style.css"> </head>
+
+<body>
+    <div class="app" ng-app="myapp">
+        <section id="todoapp" ng-controller="TodoCtrl">
+            <header id="header">
+                <h1>MyTodoList</h1>
+                
+            </header>
+            <form action="#" id="todo-form" ng-submit="addTodo()">
+                    <input type="text" id="new-todo" placeholder="New todo" autofocus autocomplete="off" ng-model="newTodo">
+                    <input class="button" type="submit" value="Add Task" /> </form>
+                </form>
+            <ul class="nav nav-pills todo-filter">
+                <li ng-class="{'active' : show == 'All' }" ng-click="show='All'"><a href="#">All</a></li>
+                <li ng-class="{'active' : show == 'Incomplete' }" ng-click="show='Incomplete'"><a href="#">Incomplete</a></li>
+                <li ng-class="{'active' : show == 'Complete' }" ng-click="show='Complete'"><a href="#">Complete</a></li>
+            </ul>
+            <section id="main">
+                <u1 id="todo-list">
+                    <li ng-repeat="todo in list.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:showFn" ng-class="{completed: todo.completed}">
+                        <div class="view">
+                            <label class="control control--checkbox">{{todo.name}}
+                                <input type="checkbox" class="toggle" ng-model="todo.completed">
+                                <div class="control__indicator"></div> 
+                                
+                            </label>
+                             <button class="destroy" ng-click="removeTodo($index)">x</button>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                </u1>
+            </section>
+            <footer id="footer">
+                <pagination page="currentPage" total-items="list.length" items-per-page="itemsPerPage" on-select-page="setPage(page)"></pagination> 
+                <div class="clear"></div>
+                <span id="todo-count"><strong> {{ remain }} </strong> Todo(s) remaining
+			</span> </footer>
+        </section>
+    </div>
+    <script src="js/todo.js"></script>
+</body>
+
+</html>
